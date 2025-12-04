@@ -1,0 +1,142 @@
+/* =========================================
+   GLOBAL RETRO–MODERN UI THEME
+   ========================================= */
+
+:root {
+    --bg-light: #f5f1e6;
+    --bg-white: #ffffff;
+    --text-dark: #212121;
+    --border-dark: #000000;
+    --accent-yellow: #ffeb3b;
+    --accent-green: #00aa00;
+    --accent-red: #ce0000;
+}
+
+/* PAGE */
+body {
+    background: var(--bg-light);
+    font-family: "Courier New", monospace;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+}
+
+/* MAIN CONTAINER / CARD */
+.container {
+    width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--bg-white);
+    border: 2px solid var(--border-dark);
+    border-radius: 6px;
+    box-shadow: 6px 6px 0 var(--border-dark);
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+    margin-top: 0;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border-dark);
+    padding-bottom: 5px;
+}
+
+/* LINKS */
+a {
+    color: var(--text-dark);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover {
+    background: var(--accent-yellow);
+    text-decoration: none;
+}
+
+/* INPUTS & BUTTONS */
+input[type="text"],
+input[type="password"],
+input[type="file"],
+button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 2px solid var(--border-dark);
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background: var(--bg-white);
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: var(--accent-yellow);
+}
+
+/* TABLES */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+th, td {
+    border: 2px solid var(--border-dark);
+    padding: 12px;
+    text-align: center;
+    font-size: 15px;
+}
+
+th {
+    background: var(--accent-yellow);
+    text-transform: uppercase;
+}
+
+/* STATUS BANNERS */
+.alert-red {
+    background: #ffeaea;
+    border: 2px solid var(--accent-red);
+    padding: 18px;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+.alert-green {
+    background: #e8ffe8;
+    border: 2px solid var(--accent-green);
+    padding: 18px;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+/* SPACERS */
+.section {
+    margin-top: 45px;
+}
+
+/* MENU PANEL */
+.panel {
+    border: 2px solid var(--border-dark);
+    padding: 18px;
+    margin-top: 25px;
+    background: var(--bg-white);
+}
+
+.panel h3 {
+    border-bottom: none;
+    margin-bottom: 12px;
+}
+
+/* FOOTER BUTTON ROW */
+.footer-links {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+}

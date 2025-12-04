@@ -1,4 +1,23 @@
-<h1>Pneumonia Detection</h1>
-<hr>
-<a href="{% url 'login' %}">Login</a><br><br>
-<a href="{% url 'login' %}">Admin Login</a><br><br>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<div class="container">
+
+    <h1>🩺 Pneumonia Detection System</h1>
+
+    <div class="panel">
+        <p>
+            Welcome to the retro–modern machine learning system for
+            X-ray based Pneumonia detection. 
+        </p>
+        <p>
+            Use the links below to begin.
+        </p>
+
+        <div class="footer-links">
+            <a href="{% url 'login' %}">🔐 Login</a>
+            <a href="{% url 'register' %}">📝 Register</a>
+        </div>
+    </div>
+
+</div>

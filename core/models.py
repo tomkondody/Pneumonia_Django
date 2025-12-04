@@ -1,9 +1,12 @@
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
 
 class Prediction(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='uploads/')
-    result = models.CharField(max_length=50)
+    result = models.CharField(max_length=20)
     confidence = models.FloatField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.result} ({self.confidence:.2f}%)"

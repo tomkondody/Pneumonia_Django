@@ -1,20 +1,34 @@
-<h2>All Predictions</h2>
-<hr>
-<table border="1">
-<tr>
-    <th>User</th>
-    <th>Result</th>
-    <th>Confidence</th>
-    <th>Date</th>
-</tr>
-{% for p in pred %}
-<tr>
-    <td>{{p.user.username}}</td>
-    <td>{{p.result}}</td>
-    <td>{{p.confidence}}</td>
-    <td>{{p.created_at}}</td>
-</tr>
-{% endfor %}
-</table>
-<br>
-<a href="{% url 'logout' %}">Logout</a>
+{% load static %}
+{% load tz %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<div class="container">
+
+    <h2>📋 Prediction Records</h2>
+
+    <div class="panel">
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Result</th>
+                <th>Confidence</th>
+                <th>Time</th>
+            </tr>
+
+            {% for p in pred %}
+            <tr>
+                <td>{{ p.user.username }}</td>
+                <td>{{ p.result }}</td>
+                <td>{{ p.confidence|floatformat:2 }}%</td>
+                <td>{{ p.created_at|localtime|date:"d-m-Y H:i:s" }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="footer-links">
+        <a href="{% url 'admin_dashboard' %}">Back</a>
+        <a href="{% url 'logout' %}" style="color:#b20000;">Logout</a>
+    </div>
+
+</div>
